@@ -10,9 +10,9 @@ $password = md5($_POST['password']);
 
 //concluir condição de login
 
-$result = ;
+$result = $userDao->findByUser($user, $password);
 
-if (...) {
+if ($result) {
     $_SESSION['admin'] = $user;
     header('location: ../view/index.php');
 } else {
